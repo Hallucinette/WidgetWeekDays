@@ -61,6 +61,9 @@ struct WidgetShowDaysEntryView : View {
             .foregroundColor(.black)
             .padding(.all, 10)
         }
+        .onAppear {
+            viewModel.loadData()
+        }
     }
 }
 

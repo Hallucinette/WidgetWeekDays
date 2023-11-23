@@ -1,3 +1,10 @@
+//
+//  WidgetShowDaysViewModel.swift
+//  WidgetWeekDays
+//
+//  Created by Amelie Pocchiolo on 22/11/2023.
+//
+
 import Foundation
 import SwiftUI
 
@@ -5,6 +12,30 @@ import SwiftUI
 class WidgetShowDaysViewModel: ObservableObject {
     
     @Published var citations = [QuoteModel]()
+    
+    init() {
+        loadData()
+    }
+    
+    func loadData() {
+        if let fileURL = Bundle.main.url(forResource: "quotes", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: fileURL)
+                let decoder = JSONDecoder()
+                citations = try decoder.decode([QuoteModel].self, from: data)
+                
+                //            // Assign unique IDs to quotes
+                //            for index in citations.indices {
+                //                citations[index].id = UUID()
+                //            }
+
+            } catch {
+                print("Error loading data: \(error)")
+            }
+        } else {
+            print("File not found")
+        }
+    }
     
     func getCurrentQuote(today: Date) -> QuoteModel {
         let calendar = Calendar.current
