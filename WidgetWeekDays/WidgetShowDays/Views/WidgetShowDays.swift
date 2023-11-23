@@ -42,17 +42,24 @@ struct SimpleEntry: TimelineEntry {
 
 struct WidgetShowDaysEntryView : View {
     var entry: Provider.Entry
-    @ObservedObject var viewModel = WidgetShowDaysViewModel()
+    @StateObject var viewModel = WidgetShowDaysViewModel()
 
     var body: some View {
-        let currentDay = entry.date.formatted(.dateTime.weekday(.wide))
-        let dayWeek = viewModel.getDayOfWeekString(today: currentDay)
-        let colorDay = viewModel.getColorDayOfWeekString(today: dayWeek)
         ZStack {
-            colorDay
+            viewModel.getColorDayOfWeekString(today: entry.date)
                 .ignoresSafeArea()
-            Text(dayWeek)
-                .foregroundColor(.black)
+            VStack(alignment: .center, spacing: 0) {
+                Text(viewModel.getDayOfWeekString(today: entry.date))
+                    .font(.title3)
+                Spacer()
+                Text(viewModel.getCurrentQuote(today: entry.date).quote)
+                    .font(.headline)
+                Spacer()
+                Text(viewModel.getCurrentQuote(today: entry.date).author)
+                    .font(.footnote)
+            }
+            .foregroundColor(.black)
+            .padding(.all, 10)
         }
     }
 }
@@ -72,6 +79,6 @@ struct WidgetShowDays: Widget {
 struct WidgetShowDays_Previews: PreviewProvider {
     static var previews: some View {
         WidgetShowDaysEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }

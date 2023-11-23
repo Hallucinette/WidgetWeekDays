@@ -22,6 +22,10 @@
 		7B2BBE362B0E3692008FDF0A /* WidgetShowDaysExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7B2BBE212B0E3690008FDF0A /* WidgetShowDaysExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7B2BBE3C2B0E3EA0008FDF0A /* WidgetShowDaysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BBE3B2B0E3EA0008FDF0A /* WidgetShowDaysViewModel.swift */; };
 		7B2BBE3D2B0E3EA0008FDF0A /* WidgetShowDaysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BBE3B2B0E3EA0008FDF0A /* WidgetShowDaysViewModel.swift */; };
+		7B2BBE4C2B0E74DA008FDF0A /* CitationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BBE4B2B0E74DA008FDF0A /* CitationsModel.swift */; };
+		7B2BBE4D2B0E74DA008FDF0A /* CitationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BBE4B2B0E74DA008FDF0A /* CitationsModel.swift */; };
+		7BB287242B0ED4DB0083C7D0 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BB287232B0ED4DB0083C7D0 /* quotes.json */; };
+		7BB287252B0ED4DB0083C7D0 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BB287232B0ED4DB0083C7D0 /* quotes.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,8 @@
 		7B2BBE2F2B0E3692008FDF0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B2BBE312B0E3692008FDF0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B2BBE3B2B0E3EA0008FDF0A /* WidgetShowDaysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetShowDaysViewModel.swift; sourceTree = "<group>"; };
+		7B2BBE4B2B0E74DA008FDF0A /* CitationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitationsModel.swift; sourceTree = "<group>"; };
+		7BB287232B0ED4DB0083C7D0 /* quotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,15 +142,49 @@
 		7B2BBE272B0E3690008FDF0A /* WidgetShowDays */ = {
 			isa = PBXGroup;
 			children = (
-				7B2BBE282B0E3690008FDF0A /* WidgetShowDaysBundle.swift */,
-				7B2BBE2A2B0E3690008FDF0A /* WidgetShowDaysLiveActivity.swift */,
-				7B2BBE2C2B0E3690008FDF0A /* WidgetShowDays.swift */,
-				7B2BBE3B2B0E3EA0008FDF0A /* WidgetShowDaysViewModel.swift */,
+				7B2BBE4A2B0E52D6008FDF0A /* Ressources */,
+				7B2BBE492B0E52C1008FDF0A /* Views */,
+				7B2BBE472B0E5285008FDF0A /* Model */,
+				7B2BBE482B0E5294008FDF0A /* ViewModels */,
 				7B2BBE2E2B0E3690008FDF0A /* WidgetShowDays.intentdefinition */,
 				7B2BBE2F2B0E3692008FDF0A /* Assets.xcassets */,
 				7B2BBE312B0E3692008FDF0A /* Info.plist */,
 			);
 			path = WidgetShowDays;
+			sourceTree = "<group>";
+		};
+		7B2BBE472B0E5285008FDF0A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B2BBE4B2B0E74DA008FDF0A /* CitationsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B2BBE482B0E5294008FDF0A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7B2BBE3B2B0E3EA0008FDF0A /* WidgetShowDaysViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7B2BBE492B0E52C1008FDF0A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B2BBE282B0E3690008FDF0A /* WidgetShowDaysBundle.swift */,
+				7B2BBE2A2B0E3690008FDF0A /* WidgetShowDaysLiveActivity.swift */,
+				7B2BBE2C2B0E3690008FDF0A /* WidgetShowDays.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7B2BBE4A2B0E52D6008FDF0A /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				7BB287232B0ED4DB0083C7D0 /* quotes.json */,
+			);
+			path = Ressources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B2BBE172B0E35DF008FDF0A /* Preview Assets.xcassets in Resources */,
+				7BB287242B0ED4DB0083C7D0 /* quotes.json in Resources */,
 				7B2BBE142B0E35DF008FDF0A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B2BBE302B0E3692008FDF0A /* Assets.xcassets in Resources */,
+				7BB287252B0ED4DB0083C7D0 /* quotes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +294,7 @@
 				7B2BBE332B0E3692008FDF0A /* WidgetShowDays.intentdefinition in Sources */,
 				7B2BBE3C2B0E3EA0008FDF0A /* WidgetShowDaysViewModel.swift in Sources */,
 				7B2BBE102B0E35DD008FDF0A /* WidgetWeekDaysApp.swift in Sources */,
+				7B2BBE4C2B0E74DA008FDF0A /* CitationsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +306,7 @@
 				7B2BBE2B2B0E3690008FDF0A /* WidgetShowDaysLiveActivity.swift in Sources */,
 				7B2BBE3D2B0E3EA0008FDF0A /* WidgetShowDaysViewModel.swift in Sources */,
 				7B2BBE322B0E3692008FDF0A /* WidgetShowDays.intentdefinition in Sources */,
+				7B2BBE4D2B0E74DA008FDF0A /* CitationsModel.swift in Sources */,
 				7B2BBE292B0E3690008FDF0A /* WidgetShowDaysBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
