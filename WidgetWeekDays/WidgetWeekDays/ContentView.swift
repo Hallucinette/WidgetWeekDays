@@ -1,26 +1,17 @@
-//
-//  ContentView.swift
-//  WidgetWeekDays
-//
-//  Created by Amelie Pocchiolo on 22/11/2023.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = WidgetShowDaysViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            List {
+                ForEach(viewModel.citations, id: \.self) { citation in
+                    VStack(alignment: .leading, spacing: 4) {
+                    Text(citation.quote)
+                    Text(citation.author)
+                }
+            }
         }
         .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
